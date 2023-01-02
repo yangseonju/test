@@ -1,0 +1,801 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: 0;
+    color: #666;
+}
+
+/* rix나귀엽냐옹 서체
+   font-family: rixcutecat-pro, sans-serif;
+   font-weight: 500;
+   font-style: normal;
+*/
+
+/* Uberhand Pro Book
+font-family: ff-uberhand-pro, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Uberhand Pro Bold
+font-family: ff-uberhand-pro, sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Uberhand Pro Light
+font-family: ff-uberhand-pro-2, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+
+Uberhand Text Pro Regular
+font-family: ff-uberhand-text-pro, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+
+Uberhand Text Pro Bold
+font-family: ff-uberhand-text-pro, sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Uberhand UI Regular
+font-family: ff-uberhand-ui, sans-serif;
+font-weight: 400;
+font-style: normal;
+*/
+
+@font-face {
+    font-family: 'KoPubWorldDotum';
+    font-weight: 300;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumLight.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumLight.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumLight.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumLight.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumLight.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'KoPubWorldDotum';
+    font-weight: 500;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumMedium.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumMedium.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumMedium.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumMedium.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumMedium.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'KoPubWorldDotum';
+    font-weight: 700;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumBold.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumBold.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumBold.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumBold.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumBold.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'KoPubWorldDotum';
+    font-size: 16px;
+    color: #333;
+}
+
+/**gnb,submenu*/
+#gnb_wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+#gnb_wrap.header-scrolled {
+    background: rgba(255, 255, 255, 1);
+}
+
+.gnb_bar {
+    width: 1320px;
+    margin: 0 auto;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gnb_logo {
+    width: 20%;
+    padding-top: 20px;
+}
+
+.gnb {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+.gnb li {
+    width: 20%;
+}
+
+.gnb li a {
+    display: block;
+    text-align: center;
+    padding: 24px 0 24px;
+    font-family: 'NanumSquareRound';
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.gnb>li>a:hover {
+    color: #a19193;
+}
+
+.submenu_wrap {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    background-color: #F2E2CE;
+}
+
+.submenu_wrap .img_wrap {
+    width: 13%;
+    overflow: hidden;
+    position: relative;
+}
+
+.submenu_wrap .img_wrap img {
+    width: 90%;
+    position: absolute;
+    top: -14px;
+    left: 0px;
+}
+
+.submenu {
+    width: 1320px;
+    margin: 0 auto;
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.submenu ul {
+    width: 15%;
+}
+
+.submenu li a {
+    display: block;
+    padding: 8px 0;
+    font-size: 18px;
+}
+
+.submenu li a:hover {
+    background-color: #d1ba9f;
+    border-radius: 30px;
+    color: #fff;
+}
+
+
+
+/**header(banner)*/
+#header_wrap {
+    background-color: #FFF7EE;
+    z-index: -1;
+}
+
+.banner_wrap {
+    height: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.video_box {
+    text-align: right;
+    height: 800px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0px auto;
+    position: relative;
+}
+
+.video_box video {
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    margin-left: -666.5px
+}
+
+.ff_font {
+    font-family: 'ff-uberhand-pro', sans-serif;
+}
+
+.banner {
+    width: 100%;
+    height: 1200px;
+    margin: 0 auto;
+    background: url(../images/main/banner_top.png);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: 9;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.banner_inner {
+    width: 1320px;
+    height: 1200px;
+    margin: 0 auto;
+    padding-top: 120px;
+    position: relative;
+}
+
+.slogan {
+    padding: 100px 0 70px;
+    color: #666666;
+}
+
+.slogan h3 {
+    font-size: 34px;
+}
+
+.slogan h1 {
+    font-size: 95px;
+    font-weight: 700;
+    color: #F79F8F;
+    padding: 10px 0;
+}
+
+.lnb {
+    width: 150px;
+    margin-top: 80px;
+}
+
+.lnb li a {
+    display: block;
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.about_txt {
+    color: #fff;
+    text-align: center;
+    line-height: 1.6em;
+    font-size: 22px;
+    position: absolute;
+    bottom: 370px;
+    left: 50%;
+    margin-left: -10%;
+}
+
+.about_txt p:nth-child(2) {
+    font-size: 18px;
+    padding: 15px 0 10px;
+}
+
+.about_txt .ff_font {
+    font-size: 40px;
+}
+
+.btn_about {
+    position: absolute;
+    bottom: 300px;
+    right: 350px;
+}
+
+/**section 공통*/
+#section1,
+#section2,
+#section4 {
+    text-align: center;
+    width: 1320px;
+    margin: 100px auto;
+}
+
+.title {
+    display: inline-block;
+    font-size: 30px;
+    font-family: 'NanumSquareRound';
+    font-weight: bold;
+    color: rgb(102, 102, 102);
+    padding: 43px 50px;
+    margin-bottom: 30px;
+    background: url(../images/common/bg_title.png) no-repeat left center;
+}
+
+/**section1*/
+.main_cic_life {
+    width: 100%;
+    overflow: hidden;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.main_cic_life li {
+    width: 423px;
+    height: 450px;
+    border-radius: 80px 80px 0 80px;
+    background-color: #CFBBA2;
+}
+
+.main_cic_life li:nth-child(2) {
+    background-color: #F79F8F;
+}
+
+.main_cic_life li:nth-child(3) {
+    background-color: #A19193;
+}
+
+.main_cic_life li:hover {
+    display: inline-block;
+    vertical-align: middle;
+    animation: hvr-bob 1s infinite;
+    transform: perspective(1px) translateZ(0);
+}
+
+@keyframes hvr-bob {
+    0% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-10px);
+    }
+
+    50% {
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-5px);
+    }
+
+    100% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-10px);
+    }
+}
+
+
+.life_img_wrap {
+    width: 100%;
+    height: 250px;
+    margin-top: 30px;
+}
+
+.main_news .life_img_wrap {
+    background: url(../images/main/ciclife_img1.png) no-repeat center bottom;
+}
+
+.main_event .life_img_wrap {
+    background: url(../images/main/ciclife_img2.png) no-repeat center bottom;
+}
+
+.main_magazine .life_img_wrap {
+    background: url(../images/main/ciclife_img3.png) no-repeat center bottom;
+}
+
+.text_wrap {
+    width: 100%;
+    padding: 20px 0 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.left_text {
+    width: 70%;
+    text-align: left;
+    padding-left: 50px;
+    color: #fff;
+}
+
+.left_text h2 {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.left_text h1 {
+    font-size: 40px;
+    font-weight: bold;
+    padding-top: 8px;
+    font-family: 'NanumSquareRound';
+}
+
+.text_right_btn {
+    width: 40%;
+    overflow: hidden;
+    display: flex;
+    align-self: flex-end;
+    justify-content: center;
+}
+
+.p-index__service--arrow {
+    display: flex;
+    align-self: flex-end;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #fcf9f7;
+    border-radius: 100%;
+    transition: all .3s cubic-bezier(.19, 1, .22, 1);
+    transition-timing-function: cubic-bezier(.19, 1, .22, 1)
+}
+
+
+.p-index__service--arrow:hover {
+    background-color: #fff;
+}
+
+.p-index__service--arrow:hover svg path {
+    fill: #333;
+}
+
+/**section2*/
+#section2 {
+    background-color: rgb(228, 225, 225);
+    width: 1320px;
+    height: 650px;
+    margin: 0 auto;
+}
+
+
+.subbanner_img_wrap {
+    width: 50%;
+    height: 650px;
+    display: block;
+}
+
+.subbanner_text_wrap {
+    text-align: left;
+    width: 40%;
+    padding: 100px 0;
+    color: #fff;
+    display: block;
+}
+
+.fade {
+    width: 100%;
+    background-color: #fff;
+}
+
+.fade_box {
+    display: flex;
+    width: 100%;
+    height: 650px;
+}
+
+.fade_1 {
+    background-color: #DD546E;
+    border-radius: 0 330px 330px 0;
+
+}
+
+.fade_2 {
+    background-color: #F3C261;
+    border-radius: 0 330px 330px 0;
+}
+
+.fade_3 {
+    background-color: #FDB8B0;
+    border-radius: 0 330px 330px 0;
+}
+
+
+
+.fade_1 .subbanner_img_wrap {
+    background: url(../images/main/banner1_img.png) no-repeat left bottom;
+    background-size: 80%;
+}
+
+.fade_2 .subbanner_img_wrap {
+    background: url(../images/main/banner2_img.png) no-repeat left bottom;
+    background-size: 90%;
+}
+
+.fade_3 .subbanner_img_wrap {
+    background: url(../images/main/banner3_img.jpg) no-repeat left center;
+    background-size: 85%;
+}
+
+
+
+.subbanner_text_wrap h4 {
+    color: #FFF6BE;
+    font-size: 32px;
+    font-family: 'rixcutecat-pro', sans-serif;
+    font-weight: 500;
+    padding-left: 30px;
+    background: url(../images/main/icon.png) no-repeat top left;
+}
+
+.subbanner_text_wrap h3 {
+    padding-top: 100px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.subbanner_text_wrap h2 {
+    font-size: 30px;
+}
+
+.subbanner_text_wrap h1 {
+    font-size: 97px;
+    font-family: 'rixcutecat-pro', sans-serif;
+    font-weight: 500;
+}
+
+.subbanner_text_wrap p {
+    padding-top: 80px;
+    font-weight: 300;
+}
+
+/**section3*/
+#section3 {
+    text-align: center;
+    margin: 100px auto;
+    background-color: #F2E2CE;
+    padding: 50px 0;
+}
+
+
+section.slider {
+    width: 1320px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+.sl_wrap {
+    position: relative;
+    width: 85%;
+    margin: 0 auto;
+    height: 650px;
+}
+
+.product_img {
+    background-image: url(../images/main/blob1.png);
+    background-repeat: no-repeat;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    height: 609px;
+    width: 648px;
+    display: flex;
+    justify-content: center;
+}
+
+.product_img img {
+    align-self: center;
+    width: 60%;
+}
+
+.product_title {
+    width: 508px;
+    height: 475px;
+    background-image: url(../images/main/blob2.png);
+    background-repeat: no-repeat;
+    z-index: -1;
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.inner_text {
+    align-self: center;
+    color: #fff;
+}
+
+.inner_text h2 {
+    font-family: ff-uberhand-pro, sans-serif;
+    font-weight: 700;
+    font-size: 72px;
+}
+
+.inner_text h3 {
+    font-size: 22px;
+    padding: 30px 0;
+}
+
+.inner_text h4 {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+
+/**section4*/
+.main_store {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.store_img {
+    width: 50%;
+}
+
+.store_text {
+    width: 45%;
+    text-align: left;
+    font-family: 'NanumSquareRound';
+    color: #666;
+}
+
+.store_text h1 {
+    font-size: 25px;
+}
+
+.store_text h2 {
+    font-size: 20px;
+}
+
+.store_text h3 {
+    padding: 30px 0;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.store_text h4 {
+    font-size: 18px;
+    font-weight: 300;
+    background: url(../images/common/check.png) no-repeat left bottom 3px;
+    padding: 3px 0 3px 25px;
+}
+
+.storepage_link_btn {
+    margin-top: 50px;
+    background-color: #F79F8F;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'KoPubWorldDotum';
+    display: inline-block;
+    padding: 20px 100px;
+    border-radius: 50px;
+}
+
+.storepage_link_btn:hover {
+    animation: pulse 0.5s;
+}
+
+/**footer*/
+#footer_wrap {
+    height: 520px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.animate__jello:hover {
+    animation: jello 1.5s infinite;
+}
+
+.top_btn_box {
+    width: 100px;
+    height: 100px;
+    align-self: center;
+}
+
+.footer_bg_wrap {
+    width: 100%;
+    overflow: hidden;
+}
+
+.footer_bg {
+    width: 100%;
+    background-image: url(../images/common/footer/footer_bg.svg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    height: 450px;
+}
+
+.footer_inner {
+    margin: 0 auto;
+    width: 1320px;
+    height: 300px;
+    padding-top: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer_inner_left {
+    width: 20%;
+    height: 200px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 200;
+    color: #fff;
+    margin-top: 50px;
+}
+
+.footer_inner_left p {
+    padding: 10px 0;
+}
+
+.sns_link {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.sns_link li {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    margin: 10px;
+    background-color: #A19193;
+    display: flex;
+    justify-content: center;
+}
+
+.sns_link li img {
+    padding-top: 7px;
+    box-sizing: border-box;
+}
+
+.sns_link li:hover {
+    background-color: #F79F8F;
+}
+
+.footer_inner_right {
+    width: 20%;
+    overflow: hidden;
+}
+
+.footer_inner_right a {
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.footer_inner_right a:hover {
+    color: #756869;
+    font-size: 14px;
+}
+
+.footer_inner_right ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.footer_inner_right li {
+    width: 50%;
+}
+
+.footer_inner_right li a {
+    font-weight: 200;
+}
+
+.footer_inner_right p {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 3px 0;
+}
+
+.footer_inner_right p:nth-child(1) {
+    border: none;
+}
